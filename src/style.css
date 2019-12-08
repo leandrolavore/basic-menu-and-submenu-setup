@@ -1,0 +1,76 @@
+ul{
+    white-space: nowrap;
+    height: auto;
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    top:0;
+}
+.ulOptions {
+    list-style: none;
+    position: relative;
+    background-color: green;
+    color: white;
+    opacity: 1;
+    pointer-events: initial;
+}
+.ulOptions .ulOptions {
+    position: absolute;
+    display: none;
+    left: 100%;
+}
+li:hover > .ulOptions {
+    display: block;
+}
+li {
+
+    white-space: nowrap;
+    border-bottom:1px solid black;
+}
+li:hover {
+    position: 'relative';
+    background-color: red;
+    color: black;
+    
+}
+
+/* li:hover + li {//nexSibling selector ~ is the operator for ALL following siblings
+    color: white;
+    background-color: blue;
+} */
+button:hover {
+    background-color: red;
+    color: black;
+}
+.ulOptions li .ulOptions li:hover { /*It applies to both li's the hovered child and the parent*/
+    background-color: red;
+    color: black;
+}
+.ulOptions > li:hover > .ulOptions{
+    position: absolute;
+}
+
+.roller{
+    width: 50%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto 2fr auto;/*fixed middle, margin columns auto*/
+    text-align: center;
+}
+#rollerP{
+    margin:0;
+    font-size: 18.4px;
+    grid-column:2/3;
+    border: 2px solid blue;
+}
+#rollerP:hover {
+    font-size: 0;
+}
+#rollerP:hover:after{
+    content: attr(data-hover);
+    font-size: 18.4px;
+}
+
+.liText{
+    pointer-events: none;
+}
